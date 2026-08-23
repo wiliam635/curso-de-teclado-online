@@ -49,8 +49,8 @@
   .badge{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 16px;display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--muted);max-width:200px;}
   .badge b{display:block;color:var(--text);font-size:12px;margin-bottom:2px;}
   .badge .ic{color:var(--cyan);font-size:16px;}
-  .hero-photo{flex:1;position:relative;height:600px;border-radius:12px 0 0 0;overflow:hidden;background:#0A0F1C;}
-  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 30%;}
+  .hero-photo{flex:1;position:relative;height:600px;min-height:600px;border-radius:12px 0 0 0;overflow:hidden;background:#0A0F1C;}
+  .hero-photo img{display:block;width:100%;height:100%;min-height:100%;object-fit:cover;object-position:60% 30%;}
   .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,15,28,.85) 0%, rgba(10,15,28,0) 30%);}
   .logo-row{display:flex;align-items:center;gap:10px;padding:26px 60px 0;}
   .logo-row img{width:34px;height:34px;}
