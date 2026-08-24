@@ -514,18 +514,18 @@ p,.sec-lead,.hero-sub,.price-sub,.faq-answer{font-size:16px!important;line-heigh
     <h2 class="sec-h">Alunos tocando</h2>
     <p class="sec-lead" style="text-align:center;margin-left:auto;margin-right:auto;">Veja quem já está tocando com liberdade depois do curso</p>
     <div class="video-grid">
-      <a class="video-card" href="https://www.youtube.com/watch?v=OZaZA6FyYqg">
+      <button type="button" class="video-card" data-video-id="OZaZA6FyYqg">
         <div class="video-art video-art-1"><span class="video-play">▶</span></div><strong class="video-label">Ruan - RJ</strong>
-      </a>
-      <a class="video-card" href="https://www.youtube.com/watch?v=RiKnqtY3m1Y">
+      </button>
+      <button type="button" class="video-card" data-video-id="RiKnqtY3m1Y">
         <div class="video-art video-art-2"><span class="video-play">▶</span></div><strong class="video-label">Bruno - PR</strong>
-      </a>
-      <a class="video-card" href="https://www.youtube.com/watch?v=3Dkv4t_kMDk">
+      </button>
+      <button type="button" class="video-card" data-video-id="3Dkv4t_kMDk">
         <div class="video-art video-art-3"><span class="video-play">▶</span></div><strong class="video-label">Rodrigo - SP</strong>
-      </a>
-      <a class="video-card" href="https://www.youtube.com/watch?v=tVliqhkW9xM">
+      </button>
+      <button type="button" class="video-card" data-video-id="tVliqhkW9xM">
         <div class="video-art video-art-4"><span class="video-play">▶</span></div><strong class="video-label">Renato - SP</strong>
-      </a>
+      </button>
     </div>
   </div>
 </section>
@@ -605,7 +605,7 @@ document.querySelectorAll('.faq-item').forEach(function(item){
       card.addEventListener('click',function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
-        var href=card.getAttribute('href')||'', match=href.match(/[?&]v=([^&]+)/)||href.match(/embed\/([^?&]+)/);
+        var videoId=card.getAttribute('data-video-id'), match=videoId?[,videoId]:null;
         if(!match)return false;
         frame.src='https://www.youtube.com/embed/'+match[1]+'?autoplay=1&rel=0';
         modal.classList.add('open');modal.setAttribute('aria-hidden','false');
