@@ -283,17 +283,13 @@ p,.sec-lead,.hero-sub,.price-sub,.faq-answer{font-size:16px!important;line-heigh
 .course-module-lessons em{font-style:normal;color:var(--cyan);font-weight:700;font-size:12px;min-width:25px}
 @media(max-width:760px){.course-content-head{align-items:flex-start;flex-direction:column}.course-modules{grid-template-columns:1fr}.course-content-head .sec-h{font-size:30px!important}.course-module-toggle{font-size:15px}}
 </style>
-<script>
-document.querySelectorAll('.course-module-toggle').forEach(function(btn){btn.addEventListener('click',function(){btn.closest('.course-module').classList.toggle('open')})});
-var expand=document.querySelector('.course-expand-all');
-if(expand) expand.addEventListener('click',function(){var mods=document.querySelectorAll('.course-module');var open=this.textContent==='ABRIR TODOS';mods.forEach(function(m){m.classList.toggle('open',open)});this.textContent=open?'FECHAR TODOS':'ABRIR TODOS'});
-</script><style>.course-module-lessons[style*="block"]{display:block!important}</style><style>
+<style>.course-module-lessons[style*="block"]{display:block!important}</style><style>
 .course-module{height:auto!important}
 .course-module>summary{list-style:none}
 .course-module>summary::-webkit-details-marker{display:none}
 .course-module[open] .course-module-count i{display:inline-block;transform:rotate(180deg)}
 .course-module[open] .course-module-lessons{display:block!important}
-</style></head>
+</style><style>.course-module:not([open]) .course-module-lessons{display:none!important}.course-module[open] .course-module-lessons{display:block!important}</style></head>
 <body>
 
 <div class="logo-row">
@@ -538,21 +534,6 @@ document.querySelectorAll('.faq-item').forEach(function(item){
     var answer=item.nextElementSibling;
     var open=item.classList.toggle('open');
     answer.classList.toggle('open',open);
-  });
-});
-</script><script>
-document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('.course-module-toggle').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      btn.closest('.course-module').classList.toggle('open');
-    });
-  });
-  var expand=document.querySelector('.course-expand-all');
-  if(expand) expand.addEventListener('click',function(){
-    var mods=document.querySelectorAll('.course-module');
-    var open=this.textContent.trim()==='ABRIR TODOS';
-    mods.forEach(function(m){m.classList.toggle('open',open)});
-    this.textContent=open?'FECHAR TODOS':'ABRIR TODOS';
   });
 });
 </script></body></html>
