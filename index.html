@@ -534,4 +534,19 @@ document.querySelectorAll('.faq-item').forEach(function(item){
     answer.classList.toggle('open',open);
   });
 });
+</script><script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.course-module-toggle').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      btn.closest('.course-module').classList.toggle('open');
+    });
+  });
+  var expand=document.querySelector('.course-expand-all');
+  if(expand) expand.addEventListener('click',function(){
+    var mods=document.querySelectorAll('.course-module');
+    var open=this.textContent.trim()==='ABRIR TODOS';
+    mods.forEach(function(m){m.classList.toggle('open',open)});
+    this.textContent=open?'FECHAR TODOS':'ABRIR TODOS';
+  });
+});
 </script></body></html>
