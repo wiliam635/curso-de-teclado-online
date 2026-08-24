@@ -289,7 +289,14 @@ p,.sec-lead,.hero-sub,.price-sub,.faq-answer{font-size:16px!important;line-heigh
 .course-module>summary::-webkit-details-marker{display:none}
 .course-module[open] .course-module-count i{display:inline-block;transform:rotate(180deg)}
 .course-module[open] .course-module-lessons{display:block!important}
-</style><style>.course-module:not([open]) .course-module-lessons{display:none!important}.course-module[open] .course-module-lessons{display:block!important}</style></head>
+</style><style>.course-module:not([open]) .course-module-lessons{display:none!important}.course-module[open] .course-module-lessons{display:block!important}</style><style>
+.student-video-modal{position:fixed;inset:0;z-index:100;background:rgba(3,7,15,.88);display:none;align-items:center;justify-content:center;padding:24px}
+.student-video-modal.open{display:flex}
+.student-video-modal-box{position:relative;width:min(900px,100%);aspect-ratio:16/9;background:#050b14;border:1px solid var(--cyan);border-radius:12px;overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.6)}
+.student-video-modal iframe{width:100%;height:100%;border:0}
+.student-video-close{position:absolute;right:10px;top:10px;z-index:2;width:38px;height:38px;border:1px solid #fff;border-radius:50%;background:rgba(0,0,0,.75);color:#fff;font-size:24px;cursor:pointer;line-height:1}
+.video-card{cursor:pointer}
+</style></head>
 <body>
 
 <div class="logo-row">
@@ -536,4 +543,26 @@ document.querySelectorAll('.faq-item').forEach(function(item){
     answer.classList.toggle('open',open);
   });
 });
+</script><div class="student-video-modal" id="studentVideoModal" aria-hidden="true"><div class="student-video-modal-box"><button class="student-video-close" type="button" aria-label="Fechar vídeo">×</button><iframe title="Vídeo do aluno" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
+<script>
+(function(){
+  function initStudentVideos(){
+    var modal=document.getElementById('studentVideoModal'), frame=modal&&modal.querySelector('iframe');
+    if(!modal||!frame)return;
+    document.querySelectorAll('.video-card').forEach(function(card){
+      card.addEventListener('click',function(event){
+        event.preventDefault();
+        var match=card.href.match(/[?&]v=([^&]+)/);
+        if(!match)return;
+        frame.src='https://www.youtube.com/embed/'+match[1]+'?autoplay=1&rel=0';
+        modal.classList.add('open');modal.setAttribute('aria-hidden','false');
+      });
+    });
+    function close(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');frame.src='';}
+    modal.querySelector('.student-video-close').addEventListener('click',close);
+    modal.addEventListener('click',function(e){if(e.target===modal)close()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initStudentVideos);else initStudentVideos();
+})();
 </script></body></html>
