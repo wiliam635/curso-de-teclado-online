@@ -218,7 +218,18 @@
     .final-cta h2{font-size:24px;}
     footer{padding:26px 20px;}
   }
-.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:20;background:#25D366;color:#062b16;padding:14px 18px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.35);transition:transform .2s ease,box-shadow .2s ease}.whatsapp-float:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 12px 30px rgba(37,211,102,.55)}.btn-amber{transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}.btn-amber:hover{transform:translateY(-4px) scale(1.03);filter:brightness(1.08);box-shadow:0 12px 30px rgba(255,191,0,.35)}</style></head>
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:20;background:#25D366;color:#062b16;padding:14px 18px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.35);transition:transform .2s ease,box-shadow .2s ease}.whatsapp-float:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 12px 30px rgba(37,211,102,.55)}.btn-amber{transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}.btn-amber:hover{transform:translateY(-4px) scale(1.03);filter:brightness(1.08);box-shadow:0 12px 30px rgba(255,191,0,.35)}</style><style>
+.video-sec .video-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1100px;margin:28px auto 0}
+.video-sec .video-card{display:block;min-width:0;background:#080e1b;border:1px solid #2d405d;border-radius:10px;overflow:hidden;text-decoration:none;color:#fff;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.video-sec .video-card:hover{transform:translateY(-5px);border-color:#3ac1f0;box-shadow:0 12px 30px rgba(58,193,240,.18)}
+.video-art{position:relative;aspect-ratio:16/9;background-position:center;background-size:cover;background-color:#121a2c;display:grid;place-items:center;isolation:isolate}
+.video-art:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(24,10,65,.55),rgba(5,10,25,.3));z-index:-1}
+.video-art-1{background-image:url('img/testi1.png')}.video-art-2{background-image:url('img/testi2.png')}.video-art-3{background-image:url('img/testi3.png')}.video-art-4{background-image:url('img/instructor.png')}
+.video-play{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:rgba(8,12,25,.72);border:2px solid #fff;color:#fff;font-size:22px;padding-left:4px;text-shadow:0 1px 3px #000;z-index:1}
+.video-label{display:block;padding:13px 15px 15px;font-size:15px;color:#eaeff7}
+@media(max-width:900px){.video-sec .video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.video-sec .video-grid{grid-template-columns:1fr}.video-label{font-size:14px}}
+</style></head>
 <body>
 
 <div class="logo-row">
@@ -379,34 +390,22 @@
   </div>
 </section>
 
-<section class="video-sec">
+<section class="video-sec" id="alunos">
   <div class="wrap">
     <h2 class="sec-h">Alunos tocando</h2>
-    <p class="sec-lead" style="text-align:center;margin-left:auto;margin-right:auto;">Veja quem já está tocando com liberdade depois do curso — direto do nosso canal.</p>
+    <p class="sec-lead" style="text-align:center;margin-left:auto;margin-right:auto;">Veja quem já está tocando com liberdade depois do curso</p>
     <div class="video-grid">
-      <a class="video-card" href="https://www.youtube.com/watch?v=OZaZA6FyYqg" target="_blank">
-        <img loading="lazy" decoding="async" src="https://img.youtube.com/vi/OZaZA6FyYqg/hqdefault.jpg" onerror="this.style.display='none'">
-        <div class="fallback-ic">🎹</div>
-        <div class="video-play">▶</div>
-        <div class="video-label">Aluno tocando</div>
+      <a class="video-card" href="https://www.youtube.com/watch?v=OZaZA6FyYqg" target="_blank" rel="noopener">
+        <div class="video-art video-art-1"><span class="video-play">▶</span></div><strong class="video-label">Ruan - RJ</strong>
       </a>
-      <a class="video-card" href="https://www.youtube.com/watch?v=RiKnqtY3m1Y" target="_blank">
-        <img loading="lazy" decoding="async" src="https://img.youtube.com/vi/RiKnqtY3m1Y/hqdefault.jpg" onerror="this.style.display='none'">
-        <div class="fallback-ic">🎹</div>
-        <div class="video-play">▶</div>
-        <div class="video-label">Aluno tocando</div>
+      <a class="video-card" href="https://www.youtube.com/watch?v=RiKnqtY3m1Y" target="_blank" rel="noopener">
+        <div class="video-art video-art-2"><span class="video-play">▶</span></div><strong class="video-label">Bruno - PR</strong>
       </a>
-      <a class="video-card" href="https://www.youtube.com/watch?v=3Dkv4t_kMDk" target="_blank">
-        <img loading="lazy" decoding="async" src="https://img.youtube.com/vi/3Dkv4t_kMDk/hqdefault.jpg" onerror="this.style.display='none'">
-        <div class="fallback-ic">🎹</div>
-        <div class="video-play">▶</div>
-        <div class="video-label">Aluno tocando</div>
+      <a class="video-card" href="https://www.youtube.com/watch?v=3Dkv4t_kMDk" target="_blank" rel="noopener">
+        <div class="video-art video-art-3"><span class="video-play">▶</span></div><strong class="video-label">Rodrigo - SP</strong>
       </a>
-      <a class="video-card" href="https://www.youtube.com/watch?v=tVliqhkW9xM" target="_blank">
-        <img loading="lazy" decoding="async" src="https://img.youtube.com/vi/tVliqhkW9xM/hqdefault.jpg" onerror="this.style.display='none'">
-        <div class="fallback-ic">🎹</div>
-        <div class="video-play">▶</div>
-        <div class="video-label">Aluno tocando</div>
+      <a class="video-card" href="https://www.youtube.com/watch?v=tVliqhkW9xM" target="_blank" rel="noopener">
+        <div class="video-art video-art-4"><span class="video-play">▶</span></div><strong class="video-label">Renato - SP</strong>
       </a>
     </div>
   </div>
